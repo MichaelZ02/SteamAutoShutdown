@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SteamAutoShutdown.MyToggleButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SteamAutoShutdown"
+             mc:Ignorable="d" 
+             Height="50" Width="150" Cursor="Hand">
+    <Grid>
+        <Border x:Name="MainBorder" Background="IndianRed" BorderThickness="1" BorderBrush="Black" CornerRadius="24" Padding="2" MouseLeftButtonUp="ToggleButtonMouseDown">
+            <Border x:Name="RoundButton" Width="45" CornerRadius="25" Background="White" BorderThickness="1" BorderBrush="WhiteSmoke" HorizontalAlignment="Left" Margin="2 0"/>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Border.MouseLeftButtonUp">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation x:Name="ButtonStoryboard" Storyboard.TargetName="RoundButton" Storyboard.TargetProperty="Margin" Duration="0:0:0.25" SpeedRatio="2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+        </Border>
+    </Grid>
+</UserControl>

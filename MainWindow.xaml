@@ -1,0 +1,59 @@
+﻿<Window x:Class="SteamAutoShutdown.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SteamAutoShutdown"
+        mc:Ignorable="d"
+        Title="Steam Auto Shutdown 1.0" Height="550" Width="800" Background="#262626" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+            <Image Source="icon.png" Height="50"/>
+            <TextBlock Foreground="White" FontSize="30" TextAlignment="Center" Margin="20">STEAM AUTO SHUTDOWN</TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="Status" Foreground="IndianRed" TextAlignment="Center" FontSize="25" Grid.Row="0">Auto Shutdown Disabled</TextBlock>
+            <TextBlock x:Name="DownloadStatus" Foreground="IndianRed" TextAlignment="Center" FontSize="18" Grid.Row="1">Download detection inactive</TextBlock>
+            <local:MyToggleButton Width="100" ToggleChanged="ToggleChanged" Grid.Row="2"/>
+            <StackPanel Grid.Row="3" Width="400">
+                <TextBlock Foreground="White" FontSize="20">Settings</TextBlock>
+                <Label Foreground="White">Shutdown after</Label>
+                <Border Background="LightGray" CornerRadius="5 0 0 5" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="Inactivity" Text="60" Background="Transparent" FontSize="15" VerticalAlignment="Center" Width="310" BorderThickness="0"/>
+                        <ComboBox x:Name="TimeType" Width="90" SelectedIndex="0">
+                            <ComboBoxItem>Seconds</ComboBoxItem>
+                            <ComboBoxItem>Minutes</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+                <Label Foreground="White">Network Interface</Label>
+                <ComboBox x:Name="NetworkInterfaceCombo" SelectedIndex="0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Label Foreground="White">Action to perform</Label>
+                <ComboBox x:Name="ActionComboBox" SelectedIndex="0">
+                    <ComboBoxItem>Shutdown</ComboBoxItem>
+                    <ComboBoxItem>Hibernate</ComboBoxItem>
+                    <ComboBoxItem>Sleep</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Window>

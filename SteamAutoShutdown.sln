@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamAutoShutdown", "SteamAutoShutdown.csproj", "{79932487-63FF-478F-968A-3992B951AE37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79932487-63FF-478F-968A-3992B951AE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79932487-63FF-478F-968A-3992B951AE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79932487-63FF-478F-968A-3992B951AE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79932487-63FF-478F-968A-3992B951AE37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BB04838-A7FD-4069-9643-7AB7796BC4B0}
+	EndGlobalSection
+EndGlobal
